@@ -20,6 +20,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { MatMenuModule } from '@angular/material/menu';
+import { ConfirmComponent } from './dialog/confirm/confirm.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,14 @@ import { MatMenuModule } from '@angular/material/menu';
     LandingComponent,
     HomeComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatDialogModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
