@@ -4,8 +4,7 @@ import {
   authState,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  updateProfile, user,
-  UserInfo
+  updateProfile, UserInfo
 } from '@angular/fire/auth';
 import { concatMap, from, Observable, of } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
