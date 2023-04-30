@@ -7,7 +7,7 @@ import {
   updateProfile,
   UserInfo
 } from '@angular/fire/auth';
-import { concatMap, from, Observable, of, switchMap } from 'rxjs';
+import { concatMap, from, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
