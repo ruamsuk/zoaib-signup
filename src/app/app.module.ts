@@ -27,6 +27,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NgOptimizedImage } from '@angular/common';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     LoginComponent,
     SignUpComponent,
     ConfirmComponent,
-    ProfileComponent
+    ProfileComponent,
+    VerifyEmailComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,9 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     HotToastModule.forRoot(),
     NgOptimizedImage
   ],
-  providers: [],
+  providers: [
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

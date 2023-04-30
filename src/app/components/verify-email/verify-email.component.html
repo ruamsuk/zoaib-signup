@@ -1,0 +1,19 @@
+<p>&nbsp;</p>
+
+  <div
+    *ngIf="user$ | async as user"
+    class="form-container mat-elevation-z5 text-center">
+    <h2>Thank You for Registering</h2>
+    <p >
+      We have sent a confirmation email to <strong>{{ user.email }}</strong
+    >.
+    </p>
+    <p>
+      Please check your email and click on the link to verify your email
+      address.
+    </p>
+    <button mat-stroked-button (click)="resendEmail()">
+      Resend Verification Email
+    </button>
+  </div>
+

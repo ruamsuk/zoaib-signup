@@ -77,6 +77,8 @@ export class SignUpComponent {
           success: 'Congrats! You are all signed up',
           error: ({message}) => `${message}`
         })
-      ).subscribe(() => this.router.navigate(['/home']));
+      ).subscribe(() => {
+        this.authService.sendEmail().then(() => this.router.navigate(['/verify-email']))
+    });
   }
 }
