@@ -10,6 +10,8 @@ import {
 import { AuthenticationService } from '../../services/authentication.service';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Router } from '@angular/router';
+import { switchMap } from 'rxjs';
+import { UsersService } from '../../services/users.service';
 
 export function passwordMatchValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -40,6 +42,7 @@ export class SignUpComponent {
 
   constructor(
     private authService: AuthenticationService,
+    private userService: UsersService,
     private toast: HotToastService,
     private router: Router
   ) {
@@ -64,14 +67,16 @@ export class SignUpComponent {
   submit() {
     if (this.signUpForm.invalid) return;
 
-    const { name, email, password } = this.signUpForm.value;
-    this.authService.signUp(name, email, password)
+    const {name, email, password} = this.signUpForm.value;
+    this.authService.signUp(email, password)
       .pipe(
+        switchMap(({user: {uid}}) =>
+          this.userService.addUser({uid, email, displayName: name})),
         this.toast.observe({
           loading: 'loading...',
           success: 'Congrats! You are all signed up',
           error: ({message}) => `${message}`
         })
-      ).subscribe(() => this.router.navigate(['/home']))
+      ).subscribe(() => this.router.navigate(['/home']));
   }
 }

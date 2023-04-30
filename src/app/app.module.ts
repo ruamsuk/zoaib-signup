@@ -17,11 +17,16 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+
 import { environment } from '../environments/environment';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { MatMenuModule } from '@angular/material/menu';
 import { ConfirmComponent } from './dialog/confirm/confirm.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ProfileComponent } from './components/profile/profile.component';
+import { NgOptimizedImage } from '@angular/common';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     HomeComponent,
     LoginComponent,
     SignUpComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    HotToastModule.forRoot()
+    provideStorage(() => getStorage()),
+    provideFirestore(() => getFirestore()),
+    HotToastModule.forRoot(),
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

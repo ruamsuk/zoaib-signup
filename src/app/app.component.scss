@@ -1,5 +1,15 @@
-mat-toolbar {
+/*mat-toolbar {
   justify-content: space-between;
+}*/
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.profile-image-toolbar {
+  border-radius: 100%;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 
 .content {
