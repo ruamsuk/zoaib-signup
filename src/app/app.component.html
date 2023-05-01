@@ -1,15 +1,17 @@
 <mat-toolbar color="primary">
   <span routerLink="/">Sign up Flow with Firebase</span>
   <span class="example-spacer"></span>
-    <ng-container *ngIf="user$ | async as user; else loginButton">
-              <button mat-button [matMenuTriggerFor]="userMenu">
+  <ng-container *ngIf="user$ | async as user; else loginButton">
+    <button mat-button [matMenuTriggerFor]="userMenu">
       <img class="profile-image-toolbar" width="30" height="30"
            [src]="userImg ?? 'assets/images/dummy-user.png'" alt="image">
-                {{ user.displayName ?? user.email }}
+      <span class="sarabun">
+           {{ user.displayName ?? user.email }}
+      </span>
     </button>
     <mat-icon>expand_more</mat-icon>
   </ng-container>
-    <ng-template #loginButton>
+  <ng-template #loginButton>
     <button mat-button routerLink="login">
       <mat-icon>login</mat-icon>
       Login

@@ -11,6 +11,7 @@ import {
 } from '@angular/fire/auth-guard';
 import { ProfileComponent } from './components/profile/profile.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { UserListComponent } from './components/user-list/user-list.component';
 
 const redirectToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectToHome = () => redirectLoggedInTo(['home']);
@@ -44,6 +45,11 @@ const routes: Routes = [
   {
     path: 'verify-email',
     component: VerifyEmailComponent,
+    ...canActivate(redirectToLogin)
+  },
+  {
+    path: 'user-list',
+    component: UserListComponent,
     ...canActivate(redirectToLogin)
   }
 ];

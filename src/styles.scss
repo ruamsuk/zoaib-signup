@@ -1,5 +1,9 @@
-@use 'node_modules/@ngneat/hot-toast/src/styles/styles.scss';
 /* You can add global styles to this file, and also import other style files */
+@use 'node_modules/@ngneat/hot-toast/src/styles/styles.scss';
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&family=Thasadith&family=Sarabun&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -16,6 +20,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .form-container mat-form-field {
   width: 100%;
+}
+
+.form-container input {
+  font-family: 'Sarabun', sans-serif !important;
 }
 
 .center {
@@ -38,4 +46,60 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .sign-up-link {
   font-size: 1.2rem;
   margin-left: 8px;
+}
+
+.sarabun {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 1rem;
+}
+
+/* Mat table */
+.mat-sort-header-content, .mat-mdc-header-cell {
+  font-family: 'Prompt', sans-serif !important;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+//.mat-mdc-table tbody,
+//.mat-mdc-table tfoot,
+//.mat-mdc-table thead,
+//.mat-mdc-cell,
+//.mat-mdc-footer-cell,
+//.mat-mdc-header-row,
+//.mat-mdc-row,
+//.mat-mdc-footer-row,
+.mat-mdc-table .mat-mdc-header-cell {
+  background: #ede8e8 !important;
+}
+
+.mat-mdc-table .mat-mdc-row:hover {
+  cursor: pointer;
+  background: #f4f0f0 !important;
+}
+
+.mdc-data-table__cell {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 16px;
+}
+
+.cell-align {
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
+}
+
+.prompt-font {
+  font-family: 'Prompt', sans-serif;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* for dialog pop-up */
+.btn-dialog-close {
+  width: 45px;
+  min-width: 0 !important;
+  height: 40px;
+  padding: 0 !important;
 }

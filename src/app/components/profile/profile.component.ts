@@ -14,9 +14,8 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnDestroy {
+export class ProfileComponent {
   user$ = this.authService.currentUser$;
-  subscribe: Subscription;
 
   profileForm = new FormGroup({
     uid: new FormControl(''),
@@ -40,7 +39,6 @@ export class ProfileComponent implements OnDestroy {
         this.profileForm.patchValue({...user});
       });
   }
-
   uploadImage(event: any, user: User) {
     this.imageService.uploadImage(
       event.target.files[0], `images/profile/${user.uid}`
@@ -71,7 +69,4 @@ export class ProfileComponent implements OnDestroy {
       ).subscribe()
   }
 
-  ngOnDestroy() {
-    if (this.subscribe) this.subscribe.unsubscribe();
-  }
 }

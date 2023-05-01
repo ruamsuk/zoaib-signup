@@ -1,6 +1,7 @@
-/*mat-toolbar {
-  justify-content: space-between;
-}*/
+mat-toolbar ng-container {
+  //justify-content: space-between;
+  font-family: 'Sarabun', sans-serif !important;
+}
 
 .example-spacer {
   flex: 1 1 auto;
@@ -15,3 +16,4 @@
 .content {
   padding: 32px;
 }
+

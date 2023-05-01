@@ -1,0 +1,33 @@
+table {
+  border-collapse: collapse;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 18px;
+  //margin-bottom: 1rem;
+  color: #212529;
+  margin: auto;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  /*border-top: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;*/
+}
+
+table th {
+  text-align: right;
+  padding-right: 15px;
+}
+
+table tr {
+  border-top: 1px solid #dee2e6;
+}
+
+table tr:last-child {
+  border-bottom: 1px solid #dee2e6;
+}
+
+/*.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}*/

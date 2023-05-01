@@ -1,0 +1,62 @@
+<mat-toolbar>
+  User Detail
+  <span class="spacer"></span>
+
+  <span>
+    <button
+      mat-stroked-button
+      class="btn-dialog-close"
+      (click)="onClose()"
+      tabindex="-1">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </span>
+</mat-toolbar>
+
+<mat-dialog-content class="sarabun">
+  <table *ngIf="user$ | async as user" class="table table-striped">
+    <tr>
+      <th scope="row">Display Name:</th>
+      <td>
+        {{userService.userForm.controls['displayName'].value}}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Name:</th>
+      <td>
+        {{userService.userForm.controls['firstName'].value}}
+        {{userService.userForm.controls['lastName'].value}}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Phone:</th>
+      <td>
+        {{userService.userForm.controls['phone'].value}}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Created:</th>
+      <td>
+        {{user.metadata.creationTime | date:'medium'}}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Last logged:</th>
+      <td>
+        {{user.metadata.lastSignInTime | date: 'medium'}}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Email verify:</th>
+      <td>
+        {{user.emailVerified}}
+      </td>
+    </tr>
+  </table>
+
+</mat-dialog-content>
+
+<mat-divider></mat-divider>
+<mat-dialog-actions [align]="'end'">
+  <button mat-stroked-button (click)="onClose()">Close</button>
+</mat-dialog-actions>

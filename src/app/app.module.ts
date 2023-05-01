@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LandingComponent } from './components/landing/landing.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -29,6 +29,12 @@ import { NgOptimizedImage } from '@angular/common';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -39,7 +45,9 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     SignUpComponent,
     ConfirmComponent,
     ProfileComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    UserListComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +55,9 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     BrowserAnimationsModule,
     MatDialogModule,
     MatToolbarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
@@ -58,7 +69,9 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     provideStorage(() => getStorage()),
     provideFirestore(() => getFirestore()),
     HotToastModule.forRoot(),
-    NgOptimizedImage
+    NgOptimizedImage,
+    FormsModule,
+    MatDividerModule
   ],
   providers: [
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase }

@@ -78,7 +78,10 @@ export class SignUpComponent {
           error: ({message}) => `${message}`
         })
       ).subscribe(() => {
-        this.authService.sendEmail().then(() => this.router.navigate(['/verify-email']))
+        this.authService.sendEmail().then(() =>
+          this.router
+            .navigateByUrl('', {skipLocationChange: true})
+            .then(() => this.router.navigate(['/verify-email'])))
     });
   }
 }
