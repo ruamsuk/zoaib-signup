@@ -3,7 +3,7 @@ import { User } from '@angular/fire/auth';
 import { AuthenticationService } from '../../services/authentication.service';
 import { ImageUploadService } from '../../services/image-upload.service';
 import { HotToastService } from '@ngneat/hot-toast';
-import { concatMap, Subscription } from 'rxjs';
+import { concatMap } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UsersService } from '../../services/users.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';

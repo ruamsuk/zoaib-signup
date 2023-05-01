@@ -4,7 +4,7 @@ import {
   collectionData,
   doc,
   docData,
-  Firestore, getDoc,
+  Firestore,
   orderBy,
   query,
   setDoc,
